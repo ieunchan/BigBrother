@@ -1,3 +1,6 @@
+
+https://lens.usercontent.google.com/image?vsrid=CM6P_ZrF1t6h2AEQAhgBIiQwNjc0OWRmMC0yMzAwLTQ2ZWUtOWYyZC1kMDNiMjlkMDQwMmMyBiICc2woBDjFrrKlrKmSAw&gsessionid=q5woL2pRomgomQ_EffcgSFFcPbmXgtWFUCiRQxKlDE0Vhz6GF3UsdQ
+
 # BigBrother
 
 나를 제외한 다른 유저가 내 컴퓨터 혹은 노트북 사용을 감지할 시 사용자의 사진과 사용로그를 기록합니다.
