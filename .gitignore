@@ -50,7 +50,6 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
-*.jpg
 
 # Translations
 *.mo
@@ -206,3 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# embeddings
+data/owner_embedding.npy
+
+# owner face images
+data/owner_faces/
