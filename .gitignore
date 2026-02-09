@@ -211,3 +211,6 @@ data/owner_embedding.npy
 
 # owner face images
 data/owner_faces/
+
+# snapshot files
+file_snapshot.json

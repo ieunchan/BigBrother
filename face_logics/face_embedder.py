@@ -4,10 +4,11 @@ import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 import numpy as np
+from decouple import config
 
 def embed_face_rgb(face_rgb):
     np.set_printoptions(threshold=np.inf)
-    MODEL_PATH = "models/mobilenet_v3_small_075_224_embedder.tflite"
+    MODEL_PATH = config("FACE_EMBEDDER_MODEL")
     base_options = python.BaseOptions(model_asset_path=MODEL_PATH)
     options = vision.ImageEmbedderOptions(
         base_options=base_options, l2_normalize=True, quantize=False
@@ -22,8 +23,8 @@ def embed_face_rgb(face_rgb):
 
 # 주인 얼굴의 평균 벡터값
 def build_owner_embedding(
-        owner_faces_dir: str = 'data/owner_faces', 
-        output_path: str = 'data/owner_embedding.npy'
+        owner_faces_dir: str = config("OWNER_DIR"), 
+        output_path: str = config("OWNER_EMBEDDING_OUTPUT")
     ):
     # data/owner_faces의 파일들을 임베딩 -> 각 벡터값들의 평균벡터 추출
     embeddings = []

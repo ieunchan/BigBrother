@@ -2,12 +2,13 @@ import cv2
 import os
 import mediapipe as mp
 from datetime import datetime
+from decouple import config
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
 # STEP 1: 
-OWNER_DIR = "data/owner_faces"
-MODEL_PATH = "models/face_detector.task"
+OWNER_DIR = config("OWNER_DIR")
+MODEL_PATH = config("FACE_DETECTOR_MODEL")
 os.makedirs(OWNER_DIR, exist_ok=True)
 
 def create_detector():

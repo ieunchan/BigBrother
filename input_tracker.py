@@ -1,11 +1,12 @@
 # 주인 외에 다른 사람이 컴퓨터 무단 이용 시, 키보드 로그를 저장.
 
-from pynput.keyboard import Key, Listener
-from datetime import datetime
 import re
+from decouple import config
+from datetime import datetime
+from pynput.keyboard import Key, Listener
 
-RAW_DATA = 'captures/raw_data.txt'
-LOG_FILE = 'captures/key_logs.txt'
+RAW_DATA = config("RAW_DATA")
+LOG_FILE = config("LOG_FILE")
 KOR_TO_ENG = {
     "ㄱ":"r","ㄲ":"R","ㄴ":"s","ㄷ":"e","ㄸ":"E","ㄹ":"f","ㅁ":"a","ㅂ":"q","ㅃ":"Q",
     "ㅅ":"t","ㅆ":"T","ㅇ":"d","ㅈ":"w","ㅉ":"W","ㅊ":"c","ㅋ":"z","ㅌ":"x","ㅍ":"v",
