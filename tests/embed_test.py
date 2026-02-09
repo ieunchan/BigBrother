@@ -1,5 +1,5 @@
 import cv2
-from face_embedder import embed_face_rgb
+from face_logics.face_embedder import embed_face_rgb
 
 IMAGE_PATH = 'data/owner_faces/face_20260130_0116.jpg'
 

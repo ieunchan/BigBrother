@@ -1,9 +1,9 @@
 import os
 import cv2
 import numpy as np
-from face_embedder import embed_face_rgb
-from face_detector import run_capture_and_save
-from verifier import cosine_similarity
+from face_logics.face_embedder import embed_face_rgb
+from face_logics.face_detector import run_capture_and_save
+from face_logics.verifier import cosine_similarity
 
 # TEST_IMAGE_PATH = 'data/owner_faces'
 OWNER_EMBEDDING_PATH = 'data/owner_embedding.npy'
@@ -33,3 +33,5 @@ similarity = cosine_similarity(current_embedding, owner_embedding)
 
 print(f"  임베딩 쉐입: {current_embedding.shape}")
 print(f"Cosine Similarity: {similarity * 100:.2f}%")
+
+os.remove(images)
