@@ -213,4 +213,10 @@ data/owner_embedding.npy
 data/owner_faces/
 
 # snapshot files
-file_snapshot.json
+capture/snapshot.json
+capture/snapshot.pre.json
+capture/snapshot_compare.json
+
+#captures
+captures/key_logs.txt
+captures/raw_data.txt
