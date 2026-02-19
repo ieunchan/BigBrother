@@ -216,6 +216,7 @@ data/owner_faces/
 capture/snapshot.json
 capture/snapshot.pre.json
 capture/snapshot_compare.json
+captures/app_usage_logs.json
 
 #captures
 captures/key_logs.txt

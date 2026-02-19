@@ -24,7 +24,7 @@ EXCLUDE_DIRS = {
 def get_mtime(path: Path) -> str | None:
     try:
         mtime = path.stat().st_mtime
-        return datetime.fromtimestamp(mtime).strftime('%Y/%m/%d %H:%M%S')
+        return datetime.fromtimestamp(mtime).strftime('%Y-%m-%d %H:%M:%S')
     except Exception:
         return None
 # 2️ Finder 기반 최근 사용일
@@ -66,7 +66,7 @@ def create_snapshot() -> dict:
                 '최근 사용일' : last_used
             }
     end_time = time.perf_counter()
-    print(f'스냅샷 완료: 총 {index}개의 파일 검사, 소요시간: {end_time - start_time}초 소요.')
+    print(f'스냅샷 완료: 총 {index}개의 파일 검사, 소요시간: {end_time - start_time:.2f}초 소요.')
     return snapshot
 # 4️ 이전 스냅샷 로딩
 def load_previous_snapshot(snapshot_path: Path) -> dict:

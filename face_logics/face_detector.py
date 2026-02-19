@@ -54,7 +54,7 @@ def detect_and_save_owner_face(detector, frame):
 
         face_img = frame[y:y+h, x:x+w]
 
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         save_path = os.path.join(OWNER_DIR, f"face_{timestamp}.jpg")
 
         cv2.imwrite(save_path, face_img)
