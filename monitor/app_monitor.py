@@ -6,7 +6,6 @@ import json
 from AppKit import NSWorkspace
 from Foundation import NSObject
 from PyObjCTools import AppHelper
-import objc
 
 
 APP_USAGE_LOGS = Path(config('APP_USAGE_LOGS'))
@@ -27,22 +26,42 @@ class AppObserver(NSObject):
         app_name = app.localizedName()
         pid = app.processIdentifier()
 
-        print(f'LAUNCHED: {app_name}, :::::: {pid}')
+        print(f'LAUNCHED: {app_name}, :::PID::: {pid}')
 
         log_data = {
             'APPNAME' : app_name,
             'PID' : pid,
-            'BEGIN' : datetime.now().strftime('%y-%m-%d %H:%M:%S')
+            'BEGIN' : datetime.now().strftime('%y-%m-%d %H:%M:%S'),
+            'TYPE' : '사용자가 실행함'
         }
         save_app_logs(log_data)
 
-if __name__ == "__main__":
+# 메인에서 실행 (모듈화)
+def start_app_monitor():
     workspace = NSWorkspace.sharedWorkspace()
     notification_center = workspace.notificationCenter()
+    running_apps = workspace.runningApplications()
+    
+    for app in running_apps:
+        if app.activationPolicy() == 0:
+            app_name = app.localizedName()
+            pid = app.processIdentifier()
+            print(f'Running App: {app_name} / PID: {pid}')
+            log_data = {
+                'APPNAME' : app_name,
+                'PID' : pid,
+                'BEGIN' : datetime.now().strftime('%y-%m-%d %H:%M:%S'),
+                'TYPE' : '초기 실행'
+            }
+            save_app_logs(log_data)
 
     observer = AppObserver.alloc().init()
-
-    notification_center.addObserver_selector_name_object_(observer, b"appLaunched:", "NSWorkspaceDidLaunchApplicationNotification", None)
+    notification_center.addObserver_selector_name_object_(
+        observer,
+        b"appLaunched:",
+        "NSWorkspaceDidLaunchApplicationNotification",
+        None
+        )
 
     print("App launch monitor started...")
     AppHelper.runConsoleEventLoop()

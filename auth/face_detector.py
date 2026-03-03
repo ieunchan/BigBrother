@@ -36,6 +36,7 @@ def capture_frame():
         raise RuntimeError("Fail to capture the Frame")
     return frame
 
+# 초기 유저 얼굴 저장용
 def detect_and_save_owner_face(detector, frame):
     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
@@ -68,6 +69,33 @@ def run_capture_and_save():
     detector = create_detector()
     frame = capture_frame()
     return detect_and_save_owner_face(detector, frame)
+
+# 로그인 시 인증용 
+def detect_face_and_return_frame(detector, frame):
+    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
+
+    detection_result = detector.detect(image)
+
+    if detection_result.detections:
+        detection = detection_result.detections[0]
+        bbox = detection.bounding_box
+
+        x = bbox.origin_x
+        y = bbox.origin_y
+        w = bbox.width
+        h = bbox.height
+
+        face_img = frame[y:y+h, x:x+w]
+        return face_img
+
+    return None
+
+# 찍힌 사진을 그대로 리턴
+def capture_face_for_verification():
+    detector = create_detector()
+    frame = capture_frame()
+    return detect_face_and_return_frame(detector, frame)
 
 if __name__ == "__main__":
     run_capture_and_save()

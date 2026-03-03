@@ -1,9 +1,9 @@
 import os
 import cv2
 import numpy as np
-from face_logics.face_embedder import embed_face_rgb
-from face_logics.face_detector import run_capture_and_save
-from face_logics.verifier import cosine_similarity
+from auth.face_embedder import embed_face_rgb
+from auth.face_detector import run_capture_and_save
+from auth.face_verifier import cosine_similarity
 
 OWNER_EMBEDDING_PATH = 'data/owner_embedding.npy'
 

@@ -1,0 +1,98 @@
+[
+  {
+    "APPNAME": "Finder",
+    "PID": 630,
+    "BEGIN": "26-02-25 21:12:51",
+    "TYPE": "초기 실행"
+  },
+  {
+    "APPNAME": "iTerm2",
+    "PID": 1431,
+    "BEGIN": "26-02-25 21:13:00",
+    "TYPE": "사용자가 실행함"
+  },
+  {
+    "APPNAME": "Cursor",
+    "PID": 8279,
+    "BEGIN": "26-02-25 21:15:34",
+    "TYPE": "사용자가 실행함"
+  },
+  {
+    "APPNAME": "Cursor",
+    "PID": 10886,
+    "BEGIN": "26-02-25 21:15:52",
+    "TYPE": "사용자가 실행함"
+  },
+  {
+    "APPNAME": "ChatGPT",
+    "PID": 13786,
+    "BEGIN": "26-02-25 21:16:04",
+    "TYPE": "사용자가 실행함"
+  },
+  {
+    "APPNAME": "Finder",
+    "PID": 632,
+    "BEGIN": "26-02-26 14:34:59",
+    "TYPE": "초기 실행"
+  },
+  {
+    "APPNAME": "iTerm2",
+    "PID": 1705,
+    "BEGIN": "26-02-26 14:35:09",
+    "TYPE": "사용자가 실행함"
+  },
+  {
+    "APPNAME": "Finder",
+    "PID": 609,
+    "BEGIN": "26-02-26 23:26:01",
+    "TYPE": "초기 실행"
+  },
+  {
+    "APPNAME": "iTerm2",
+    "PID": 1295,
+    "BEGIN": "26-02-26 23:26:06",
+    "TYPE": "사용자가 실행함"
+  },
+  {
+    "APPNAME": "Finder",
+    "PID": 619,
+    "BEGIN": "26-03-01 01:32:10",
+    "TYPE": "초기 실행"
+  },
+  {
+    "APPNAME": "Riot Client",
+    "PID": 1128,
+    "BEGIN": "26-03-01 01:32:23",
+    "TYPE": "사용자가 실행함"
+  },
+  {
+    "APPNAME": "iTerm2",
+    "PID": 1405,
+    "BEGIN": "26-03-01 01:32:25",
+    "TYPE": "사용자가 실행함"
+  },
+  {
+    "APPNAME": "Finder",
+    "PID": 624,
+    "BEGIN": "26-03-01 16:03:54",
+    "TYPE": "초기 실행"
+  },
+  {
+    "APPNAME": "iTerm2",
+    "PID": 1153,
+    "BEGIN": "26-03-01 16:03:58",
+    "TYPE": "사용자가 실행함"
+  },
+  {
+    "APPNAME": "Finder",
+    "PID": 631,
+    "BEGIN": "26-03-02 13:48:30",
+    "TYPE": "초기 실행"
+  },
+  {
+    "APPNAME": "iTerm2",
+    "PID": 1710,
+    "BEGIN": "26-03-02 13:48:47",
+    "TYPE": "사용자가 실행함"
+  }
+]

